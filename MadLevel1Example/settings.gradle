@@ -1,0 +1,2 @@
+rootProject.name='Mad Level 1 Example'
+include ':app'

@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Reminder Level 3 Kotlin</string>
+    <string name="title_activity_add">Add Activity</string>
+    <string name="action_settings">Settings</string>
+    <string name="content_add_title">Add your reminder</string>
+    <string name="reminder">Reminder</string>
+</resources>
