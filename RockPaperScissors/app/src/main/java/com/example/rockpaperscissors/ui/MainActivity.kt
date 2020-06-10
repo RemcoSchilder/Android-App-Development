@@ -102,17 +102,23 @@ class PlayActivity : AppCompatActivity() {
 
     private fun getStatistics() {
         mainScope.launch {
-            val playStatistics = withContext(Dispatchers.IO) {
+            val Statistics = withContext(Dispatchers.IO) {
                 playRepository.getStatistics()
             }
 
             var win = 0
             var draw = 0
             var lose = 0
-            for (stat in playStatistics) {
-                if (stat.result == 0) { win = stat.total }
-                if (stat.result == 1) { draw = stat.total }
-                if (stat.result == 2) { lose = stat.total }
+            for (statistic in Statistics) {
+                if (statistic.result == 0) {
+                    win = statistic.total
+                }
+                if (statistic.result == 1) {
+                    draw = statistic.total
+                }
+                if (statistic.result == 2) {
+                    lose = statistic.total
+                }
             }
 
             if (win == 0 && draw == 0 && lose == 0) {
@@ -138,7 +144,7 @@ class PlayActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem) = when (item.itemId) {
         R.id.menuShowHistoryBtn -> {
             // Open history activity
-            val intent = Intent(this, HistoryActivity::class.java)
+            val intent = Intent(this, PlayHistory::class.java)
             startActivityForResult(intent,
                 SHOW_HISTORY_REQUEST_CODE
             )

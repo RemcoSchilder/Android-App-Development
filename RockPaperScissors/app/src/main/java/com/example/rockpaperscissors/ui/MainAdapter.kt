@@ -8,7 +8,7 @@ import com.example.rockpaperscissors.R
 import com.example.rockpaperscissors.model.Play
 import kotlinx.android.synthetic.main.item_history.view.*
 
-class PlayAdapter() : RecyclerView.Adapter<PlayAdapter.ViewHolder>() {
+class MainAdapter() : RecyclerView.Adapter<MainAdapter.ViewHolder>() {
 
     companion object {
         var playHistoryList = arrayListOf<Play>()

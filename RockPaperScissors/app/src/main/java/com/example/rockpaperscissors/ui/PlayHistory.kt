@@ -14,9 +14,9 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class HistoryActivity : AppCompatActivity() {
+class PlayHistory : AppCompatActivity() {
 
-    private val playAdapter = PlayAdapter()
+    private val playAdapter = MainAdapter()
     private lateinit var playRepository: PlayRepository
     private val mainScope = CoroutineScope(Dispatchers.Main)
 
@@ -76,8 +76,8 @@ class HistoryActivity : AppCompatActivity() {
                 playRepository.getAllPlays()
             }
 
-            this@HistoryActivity.playAdapter.setHistory(playHistory)
-            this@HistoryActivity.playAdapter.notifyDataSetChanged()
+            this@PlayHistory.playAdapter.setHistory(playHistory)
+            this@PlayHistory.playAdapter.notifyDataSetChanged()
         }
     }
 
