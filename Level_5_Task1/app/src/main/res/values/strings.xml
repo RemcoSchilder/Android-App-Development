@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Notepad Kotlin</string>
+    <string name="default_title">My Personal Notepad</string>
+    <string name="last_update">Last updated: %s</string>
+    <string name="default_notepad">
+        Things I want to do today:/n
+        - Finish homework
+        - Sports
+    </string>
+    <string name="notepad_title">Notepad title</string>
+    <string name="notepad_description">Notepad description</string>
+</resources>

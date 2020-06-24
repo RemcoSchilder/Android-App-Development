@@ -1,7 +1,0 @@
-<resources>
-    <string name="app_name">Game Backlog Kotlin</string>
-    <string name="input_title">Title</string>
-    <string name="input_url">Platform</string>
-    <string name="menu_delete">Delete</string>
-    <string name="unknown_title_url">Empty</string>
-</resources>
