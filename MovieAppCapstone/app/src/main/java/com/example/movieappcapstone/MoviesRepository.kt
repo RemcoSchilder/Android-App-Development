@@ -9,6 +9,7 @@ import retrofit2.Response
 
 object MoviesRepository {
 
+    // Initialize base api request using retrofit
     private val api: Api
 
     init {
@@ -16,10 +17,16 @@ object MoviesRepository {
             .baseUrl("https://api.themoviedb.org/3/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
+
         api = retrofit.create(Api::class.java)
     }
 
-    fun getPopularMovies(page: Int = 1) {
+    // Get popular movies request with onSucces and onError
+    fun getPopularMovies(
+        page: Int = 1,
+        onSuccess: (movies: List<Movie>) -> Unit,
+        onError: () -> Unit
+    ) {
         api.getPopularMovies(page = page)
             .enqueue(object : Callback<GetMoviesResponse> {
                 override fun onResponse(
@@ -29,16 +36,76 @@ object MoviesRepository {
                     if (response.isSuccessful) {
                         val responseBody = response.body()
                         if (responseBody != null) {
-                            Log.d("Repository", "Movies: ${responseBody.movies}")
+                            onSuccess.invoke(responseBody.movies)
                         } else {
-                            Log.d("Repository", "Failed to get response")
+                            onError.invoke()
                         }
+                    } else {
+                        onError.invoke()
                     }
                 }
                 override fun onFailure(call: Call<GetMoviesResponse>, t: Throwable) {
-                    12
-                    Log.e("Repository", "onFailure", t)
+                    onError.invoke()
                 }
             })
     }
+
+    // Get top rated movies request with onSucces and onError
+    fun getTopRatedMovies(
+        page: Int = 1,
+        onSuccess: (movies: List<Movie>) -> Unit,
+        onError: () -> Unit
+    ) {
+        api.getTopRatedMovies(page = page)
+            .enqueue(object : Callback<GetMoviesResponse> {
+                override fun onResponse(
+                    call: Call<GetMoviesResponse>,
+                    response: Response<GetMoviesResponse>
+                ) {
+                    if (response.isSuccessful) {
+                        val responseBody = response.body()
+                        if (responseBody != null) {
+                            onSuccess.invoke(responseBody.movies)
+                        } else {
+                            onError.invoke()
+                        }
+                    } else {
+                        onError.invoke()
+                    }
+                }
+                override fun onFailure(call: Call<GetMoviesResponse>, t: Throwable) {
+                    onError.invoke()
+                }
+            })
+    }
+
+    // Get upcoming movies request with onSucces and onError
+    fun getUpcomingMovies(
+        page: Int = 1,
+        onSuccess: (movies: List<Movie>) -> Unit,
+        onError: () -> Unit
+    ) {
+        api.getUpcomingMovies(page = page)
+            .enqueue(object : Callback<GetMoviesResponse> {
+                override fun onResponse(
+                    call: Call<GetMoviesResponse>,
+                    response: Response<GetMoviesResponse>
+                ) {
+                    if (response.isSuccessful) {
+                        val responseBody = response.body()
+                        if (responseBody != null) {
+                            onSuccess.invoke(responseBody.movies)
+                        } else {
+                            onError.invoke()
+                        }
+                    } else {
+                        onError.invoke()
+                    }
+                }
+                override fun onFailure(call: Call<GetMoviesResponse>, t: Throwable) {
+                    onError.invoke()
+                }
+            })
+    }
+
 }
