@@ -9,10 +9,17 @@
     <string name="stay_updated">Stay updated with the latest movies</string>
 
     <string name="bottom_nav_movies">Movies</string>
-    <string name="bottom_nav_watchlist">Movies</string>
+    <string name="bottom_nav_watchlist">Watchlist</string>
 
     <string name="add_to_watch_list">Add to Watchlist</string>
     <string name="remove_from_watch_list">Remove from Watchlist</string>
+
+    <string name="MOVIE_BACKDROP">extra_movie_backdrop</string>
+    <string name="MOVIE_POSTER">extra_movie_poster</string>
+    <string name="MOVIE_TITLE">extra_movie_title</string>
+    <string name="MOVIE_RATING">extra_movie_rating</string>
+    <string name="MOVIE_RELEASE_DATE">extra_movie_release_date</string>
+    <string name="MOVIE_OVERVIEW">extra_movie_overview</string>
 
     <string name="api_key">49bacf40c3664a18dbdb08ce0505c6d6t</string>
 </resources>
