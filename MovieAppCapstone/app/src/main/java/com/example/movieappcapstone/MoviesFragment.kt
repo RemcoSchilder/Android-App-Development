@@ -182,6 +182,7 @@ class MoviesFragment  : Fragment(){
     private fun showMovieDetails(movie: Movie) {
         // I used intent to "glue" the details from the request to the movie details activity.
         val intent = Intent(activity, MovieDetailsActivity3::class.java)
+        intent.putExtra(MOVIE_ID.toString(), movie.id)
         intent.putExtra(MOVIE_BACKDROP.toString(), movie.backdropPath)
         intent.putExtra(MOVIE_POSTER.toString(), movie.posterPath)
         intent.putExtra(MOVIE_TITLE.toString(), movie.title)

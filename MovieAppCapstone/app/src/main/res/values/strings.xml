@@ -20,6 +20,7 @@
     <string name="MOVIE_RATING">extra_movie_rating</string>
     <string name="MOVIE_RELEASE_DATE">extra_movie_release_date</string>
     <string name="MOVIE_OVERVIEW">extra_movie_overview</string>
+    <string name="MOVIE_ID">extra_movie_id</string>
 
     <string name="api_key">49bacf40c3664a18dbdb08ce0505c6d6t</string>
 </resources>
