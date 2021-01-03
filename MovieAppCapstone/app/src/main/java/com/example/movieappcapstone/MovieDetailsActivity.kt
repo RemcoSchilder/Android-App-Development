@@ -19,7 +19,7 @@ const val MOVIE_OVERVIEW = R.string.MOVIE_OVERVIEW
 const val MOVIE_ID = R.string.MOVIE_ID
 
 
-class MovieDetailsActivity3 : AppCompatActivity() {
+class MovieDetailsActivity : AppCompatActivity() {
     private lateinit var backdrop: ImageView
     private lateinit var poster: ImageView
     private lateinit var title: TextView
