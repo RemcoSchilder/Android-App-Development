@@ -10,13 +10,13 @@ import androidx.room.Room
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.CenterCrop
 
-const val MOVIE_BACKDROP = R.string.MOVIE_BACKDROP
-const val MOVIE_POSTER = R.string.MOVIE_POSTER
-const val MOVIE_TITLE = R.string.MOVIE_TITLE
-const val MOVIE_RATING = R.string.MOVIE_RATING
-const val MOVIE_RELEASE_DATE = R.string.MOVIE_RELEASE_DATE
-const val MOVIE_OVERVIEW = R.string.MOVIE_OVERVIEW
-const val MOVIE_ID = R.string.MOVIE_ID
+const val MOVIE_BACKDROP = "extra_movie_backdrop"
+const val MOVIE_POSTER = "extra_movie_poster"
+const val MOVIE_TITLE = "extra_movie_title"
+const val MOVIE_RATING = "extra_movie_rating"
+const val MOVIE_RELEASE_DATE = "extra_movie_release_date"
+const val MOVIE_OVERVIEW = "extra_movie_overview"
+const val MOVIE_ID = "extra_movie_id"
 
 
 class MovieDetailsActivity : AppCompatActivity() {
@@ -78,15 +78,15 @@ class MovieDetailsActivity : AppCompatActivity() {
     // Function to set de movie details
     private fun populateDetails(extras: Bundle) {
         // Set de database variables.
-        movieId = extras.getLong(MOVIE_ID.toString())
-        movieBackdrop = extras.getString(MOVIE_BACKDROP.toString(), "")
-        moviePoster = extras.getString(MOVIE_POSTER.toString(), "")
-        movieTitle = extras.getString(MOVIE_TITLE.toString(), "")
-        movieRating = extras.getFloat(MOVIE_RATING.toString(), 0f)
-        movieReleaseDate = extras.getString(MOVIE_RELEASE_DATE.toString(), "")
-        movieOverview = extras.getString(MOVIE_OVERVIEW.toString(), "")
+        movieId = extras.getLong(MOVIE_ID)
+        movieBackdrop = extras.getString(MOVIE_BACKDROP, "")
+        moviePoster = extras.getString(MOVIE_POSTER, "")
+        movieTitle = extras.getString(MOVIE_TITLE, "")
+        movieRating = extras.getFloat(MOVIE_RATING, 0f)
+        movieReleaseDate = extras.getString(MOVIE_RELEASE_DATE, "")
+        movieOverview = extras.getString(MOVIE_OVERVIEW, "")
 
-
+        // I use glide because u can get an image via an api call very easily.
         // Set backdrop image
         Glide.with(this)
             .load("https://image.tmdb.org/t/p/w1280$movieBackdrop")

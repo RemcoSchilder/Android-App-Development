@@ -38,6 +38,7 @@ class AddNewGame : AppCompatActivity() {
         actionbar.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setHomeAsUpIndicator(R.drawable.ic_arrow_back_white_24dp)
 
+        // Set on click listener for save activity button
         btnAddPortal.setOnClickListener() {
             val title = etPortalTitle.text.toString()
             val platform = etPortalPlatform.text.toString()

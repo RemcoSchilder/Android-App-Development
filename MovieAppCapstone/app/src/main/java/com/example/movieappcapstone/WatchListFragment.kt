@@ -80,13 +80,13 @@ class WatchListFragment : Fragment() {
     private fun showMovieDetails(item: WatchList) {
         // I used intent to "glue" the details from the request to the movie details activity.
         val intent = Intent(activity, MovieDetailsActivity::class.java)
-        intent.putExtra(MOVIE_ID.toString(), item.id)
-        intent.putExtra(MOVIE_BACKDROP.toString(), item.backdropPath)
-        intent.putExtra(MOVIE_POSTER.toString(), item.posterPath)
-        intent.putExtra(MOVIE_TITLE.toString(), item.title)
-        intent.putExtra(MOVIE_RATING.toString(), item.rating)
-        intent.putExtra(MOVIE_RELEASE_DATE.toString(), item.releaseDate)
-        intent.putExtra(MOVIE_OVERVIEW.toString(), item.overview)
+        intent.putExtra(MOVIE_ID, item.id)
+        intent.putExtra(MOVIE_BACKDROP, item.backdropPath)
+        intent.putExtra(MOVIE_POSTER, item.posterPath)
+        intent.putExtra(MOVIE_TITLE, item.title)
+        intent.putExtra(MOVIE_RATING, item.rating)
+        intent.putExtra(MOVIE_RELEASE_DATE, item.releaseDate)
+        intent.putExtra(MOVIE_OVERVIEW, item.overview)
 
         startActivity(intent)
     }
